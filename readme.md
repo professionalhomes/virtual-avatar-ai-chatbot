@@ -3,38 +3,41 @@
   <br>
   <h1>🌟Yours Truly the AI Waifu</h1>
   <p>
-    💬 The Ultimate soulmate for Nerds
+    💬 The Ultimate soulmate for Nerds!
     <br>
   </p>
 </div>
 
 ## The Goal
-To create a free AI Waifu that will run on your local computer with minimal of GPU.
+To create a free AI Waifu that will run on your local computer with minimal GPU requirement.
 
 ## Complete Video Installation Guide
 [Video Link](https://youtu.be/aZDaESBFic4)
 
 ## Steps for installation
 
-- Make sure to install ffmpeg in your computer
-- Install vtube studio
-- Download the zip file
-- Unzip it and set the .env file using notepad
-- Start Vtube Studio and toggle on "Start Api" from settings
-- Double click to run the start.bat file
-- Allow the plugin in Vtube studio
-- In terminal, when Mic comes, please CTRL and then speak
+- Make sure to install ffmpeg in your computer.
+- Install vtube studio.
+- Download the zip file.
+- Unzip it and set the .env file using notepad.
+- Start Vtube Studio and toggle on "Start Api" from settings.
+- Double click to run the start.bat file.
+- Allow the plugin in Vtube studio.
+- In terminal, when Mic comes, press CTRL and then speak.
    
 
 
 ✔️✔️ Requirements:
-- Need help to Install FFmpeg? See this [video](https://www.youtube.com/watch?v=EyIIvctDhYc&t=252s)
-- Find the api key for https://beta.character.ai/ || Need help to find the API key, visit the [site](https://pycai.gitbook.io/welcome/api/values)
+- Above Windows 7
+- [C++ Compiler](https://sourceforge.net/projects/mingw-w64/)
+- [Git](https://git-scm.com/)
+- Need help to Install FFmpeg? See this [video](https://www.youtube.com/watch?v=EyIIvctDhYc&t=252s).
+- Find the api key for https://beta.character.ai/ || Need help to find the API key, visit the [site](https://pycai.gitbook.io/welcome/api/values).
 - [Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) for Visual Studio 2015, 2017 and 2019.
-- Install [VTube Studio](https://denchisoft.com/)
-- Find the API key for [elevenlabs](https://beta.elevenlabs.io/speech-synthesis)
+- Install [VTube Studio](https://denchisoft.com/).
+- Find the API key for [elevenlabs](https://beta.elevenlabs.io/speech-synthesis).
 
-If you run into any problems, you can go to the following website to report issues: [https://github.com/TumblerWarren/Waifu/issues/new]
+If you run into any problems, you can go to the following website to report [issues](https://github.com/TumblerWarren/Waifu/issues/new).
 
 ##  🚧Future Goals
 - Running the project without depending on beta.charecter.ai website, by runing llm model locally.
@@ -52,7 +55,7 @@ AI Waifu Assistant is an open-source project, and we welcome any contributions f
 📈 Feature Requests: We also welcome feature requests from the community. If you have an idea for a new feature or improvement, you can submit it in the issues section of the repository.
 
 ## 👏 SUPPORT ME!
-If you really like the project please support me through [PayPal](https://paypal.me/RandomChanManga?country.x=IN&locale.x=en_GB)
+If you really like the project please support me through [PayPal](https://paypal.me/RandomChanManga?country.x=IN&locale.x=en_GB).
 
 ## 🎁 Credits
 I used the following projects as my reference. My heartful gratitude to these guys!
