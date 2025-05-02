@@ -39,7 +39,10 @@ To create a free AI Waifu that will run on your local computer with minimal GPU 
 
 If you run into any problems, you can go to the following website to report [issues](https://github.com/TumblerWarren/Waifu/issues/new).
 
-##  🚧Future Goals
+## DOCUMENTATION
+- Help for using [Voicevox](https://github.com/TumblerWarren/Waifu/blob/master/Docs/VoiceVox_Readme_Doc.md).
+
+##  🚧 Goals
 - Add Voicevox Functionality -- DONE ✅
 - Running the project without depending on beta.charecter.ai website, by runing llm model locally -- PENDING ⏳
 - Give the waifu an access to the internet -- PENDING ⏳
@@ -61,7 +64,6 @@ If you really like the project please support me through [PayPal](https://paypal
 ## 🎁 Credits
 I used the following projects as my reference. My heartful gratitude to these guys!
 
-
 [desktop-waifu](https://github.com/AlizerUncaged/desktop-waifu) - Your ultimate companion!
 
 [CharacterAI](https://github.com/kramcat/CharacterAI) - An unofficial API for Character AI for Python using Playwright.
@@ -71,3 +73,10 @@ I used the following projects as my reference. My heartful gratitude to these gu
 [PYVTS](https://github.com/Genteki/pyvts) - A python library for interacting with the VTube Studio API.
 
 [COQUI-AI](https://github.com/coqui-ai/TTS) - TTS is a library for advanced Text-to-Speech generation. 
+
+[VOICEVOX](https://github.com/VOICEVOX/voicevox) - The Voicevox Engine
+
+[VOICEVOX API](https://github.com/voicevox-client) - An unofficial API for python
+
+## LICENSE
+Falls under The MIT License (MIT) Copyright © 2023
