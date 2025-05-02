@@ -39,7 +39,10 @@ To create a free AI Waifu that will run on your local computer with minimal GPU 
 
 If you run into any problems, you can go to the following website to report [issues](https://github.com/TumblerWarren/Waifu/issues/new).
 
-##  🚧Future Goals
+## DOCUMENTATION
+- Help for using [Voicevox](https://github.com/TumblerWarren/Waifu/blob/master/Docs/VoiceVox_Readme_Doc.md).
+
+##  🚧 Goals
 - Add Voicevox Functionality -- DONE ✅
 - Running the project without depending on beta.charecter.ai website, by runing llm model locally -- PENDING ⏳
 - Give the waifu an access to the internet -- PENDING ⏳
@@ -76,3 +79,4 @@ I used the following projects as my reference. My heartful gratitude to these gu
 [VOICEVOX API](https://github.com/voicevox-client) - An unofficial API for python
 
 ## LICENSE
+Falls under The MIT License (MIT) Copyright © 2023
