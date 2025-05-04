@@ -1,15 +1,15 @@
 <div>
  <a href="https://ibb.co/pLsZxbY"><img src="https://i.ibb.co/HHMYVB5/Dream-Shaper-v7-she-is-16-and-she-is-a-stylish-girl-in-Britain-3.jpg" alt="Dream-Shaper-v7-she-is-16-and-she-is-a-stylish-girl-in-Britain-3" border="0"></a>
   <br>
-  <h1>🌟Yours Truly the AI Waifu</h1>
+  <h1>🌟Yours Truly the AI Virtual Avatar Bot</h1>
   <p>
-    💬 The Ultimate soulmate for Nerds!
+    💬 The Ultimate Companion!
     <br>
   </p>
 </div>
 
 ## The Goal
-To create a free AI Waifu that will run on your local computer with minimal GPU requirement.
+To create a free AI Chatbot with visual movement that will run on your local computer with minimal GPU requirement.
 
 ## Complete Video Installation Guide
 [Video Link](https://youtu.be/aZDaESBFic4)
@@ -19,7 +19,7 @@ To create a free AI Waifu that will run on your local computer with minimal GPU 
 - Make sure to install ffmpeg in your computer.
 - Install vtube studio.
 - Download the zip file.
-- Unzip it and set the .env file using notepad.
+- Unzip it and rename Example env.txt to .env file using notepad.
 - Start Vtube Studio and toggle on "Start Api" from settings.
 - Double click to run the start.bat file.
 - Allow the plugin in Vtube studio.
@@ -41,7 +41,7 @@ If you run into any problems, you can go to the following website to report [iss
 
 ## DOCUMENTATION
 - Help for using [Voicevox](https://github.com/TumblerWarren/Waifu/blob/master/Docs/VoiceVox_Readme_Doc.md).
-- Help for using [Oogabooga Text Gen](https://github.com/TumblerWarren/Waifu/blob/master/Docs/OogaBooga%20Text%20Gen%20Help.md)
+- Help for using [Oogabooga Text Gen](https://github.com/TumblerWarren/Waifu/blob/master/Docs/OogaBooga%20Text%20Gen%20Help.md).
 
 ##  🚧 Goals
 - Add Voicevox Functionality -- DONE ✅
@@ -81,4 +81,4 @@ I used the following projects as my reference. My heartful gratitude to these gu
 [VOICEVOX API](https://github.com/voicevox-client) - An unofficial API for python
 
 ## LICENSE
-Falls under The MIT License (MIT) Copyright © 2023
+Falls under [The MIT License](https://github.com/TumblerWarren/Waifu/blob/master/Docs/LICENSE.md) (MIT) Copyright © 2023
