@@ -41,7 +41,7 @@ If you run into any problems, you can go to the following website to report [iss
 
 ## DOCUMENTATION
 - Help for using [Voicevox](https://github.com/TumblerWarren/Waifu/blob/master/Docs/VoiceVox_Readme_Doc.md).
-- Help for using [Oogabooga Text Gen](https://github.com/TumblerWarren/Waifu/blob/master/Docs/OogaBooga%20Text%20Gen%20Help.md)
+- Help for using [Oogabooga Text Gen](https://github.com/TumblerWarren/Waifu/blob/master/Docs/OogaBooga%20Text%20Gen%20Help.md).
 
 ##  🚧 Goals
 - Add Voicevox Functionality -- DONE ✅
@@ -81,4 +81,4 @@ I used the following projects as my reference. My heartful gratitude to these gu
 [VOICEVOX API](https://github.com/voicevox-client) - An unofficial API for python
 
 ## LICENSE
-Falls under The MIT License (MIT) Copyright © 2023
+Falls under [The MIT License](https://github.com/TumblerWarren/Waifu/blob/master/Docs/LICENSE.md) (MIT) Copyright © 2023
