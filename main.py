@@ -6,7 +6,7 @@ import utils.charecter
 import utils.audio
 import utils.hotkeys
 import utils.transcriber_translate
-import TTS.Offline_tts
+import utils.Offline_tts
 import utils.vtube_studio
 import utils.voicevox_setup
 import API.Oogabooga_Api_Support
@@ -18,83 +18,129 @@ load_dotenv()
 TTS_CHOICE = os.environ.get("TTS_CHOICE")
 TT_CHOICE = os.environ.get("WHISPER_CHOICE")
 CHATBOT_CHOICE = os.environ.get("CHATBOT_SERVICE")
-
+input_choice = os.environ.get("INPUT_CHOICE")
 
 def main():
-    while True:
-        print("You" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic) " + colorama.Fore.RESET + ">", end="", flush=True)
-        utils.hotkeys.audio_input_await()
-        print("\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic " + colorama.Fore.YELLOW + "[Recording]" + colorama.Fore.GREEN + ") " + colorama.Fore.RESET + ">", end="", flush=True)
-        audio_buffer = utils.audio.record()
 
-        try:
-            tanscribing_log = "\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic " + colorama.Fore.BLUE + "[Transcribing (" + str(humanize.naturalsize(os.path.getsize(audio_buffer))) + ")]" + colorama.Fore.GREEN + ") " + colorama.Fore.RESET + "> "
-            print(tanscribing_log, end="", flush=True)
-            if TT_CHOICE.upper()== "TRANSLATE":
-                transcript=utils.transcriber_translate.translate_any_to_english(audio_buffer)
+    if input_choice.lower() == "speech":
+        while True:
+            print("You" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic) " + colorama.Fore.RESET + ">", end="",
+                  flush=True)
+            utils.hotkeys.audio_input_await()
+            print(
+                "\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic " + colorama.Fore.YELLOW + "[Recording]" + colorama.Fore.GREEN + ") " + colorama.Fore.RESET + ">",
+                end="", flush=True)
+            audio_buffer = utils.audio.record()
 
-            elif TT_CHOICE.upper()=="TRANSCRIBE":
-                transcript = utils.transcriber_translate.to_transcribe_original_language(audio_buffer)
+            try:
+                tanscribing_log = "\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic " + colorama.Fore.BLUE + "[Transcribing (" + str(
+                    humanize.naturalsize(
+                        os.path.getsize(audio_buffer))) + ")]" + colorama.Fore.GREEN + ") " + colorama.Fore.RESET + "> "
+                print(tanscribing_log, end="", flush=True)
+                if TT_CHOICE.upper() == "TRANSLATE":
+                    transcript = utils.transcriber_translate.translate_any_to_english(audio_buffer)
 
-        except Exception as e:
-            print(colorama.Fore.RED + colorama.Style.BRIGHT + "Error: " + str(e))
-            continue
+                elif TT_CHOICE.upper() == "TRANSCRIBE":
+                    transcript = utils.transcriber_translate.to_transcribe_original_language(audio_buffer)
 
-        # Clear the last line.
-        print('\r' + ' ' * len(tanscribing_log), end="")
-        print("\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic) " + colorama.Fore.RESET + "> ", end="", flush=True)
+            except Exception as e:
+                print(colorama.Fore.RED + colorama.Style.BRIGHT + "Error: " + str(e))
+                continue
 
-        print(f"{transcript.strip()}")
+            # Clear the last line.
+            print('\r' + ' ' * len(tanscribing_log), end="")
+            print("\rYou" + colorama.Fore.GREEN + colorama.Style.BRIGHT + " (mic) " + colorama.Fore.RESET + "> ",
+                  end="", flush=True)
 
-        if CHATBOT_CHOICE=="oogabooga":
-            API.Oogabooga_Api_Support.send_via_oogabooga(transcript)
-            message = API.Oogabooga_Api_Support.receive_via_oogabooga()
+            print(f"{transcript.strip()}")
 
-        elif CHATBOT_CHOICE == "betacharacter":
-            utils.charecter.send_message(transcript)
-            message = utils.charecter.received_message()
-            
-        elif CHATBOT_CHOICE == "local_llm" or CHATBOT_CHOICE == "collab_llm":
-            API.local_llm_inference.send_via_local_llm(transcript)
-            message=API.local_llm_inference.receive_via_local_llm()            
-       
-        else:
-            print("Sorry Wrong Chatbot Choice")
+            if CHATBOT_CHOICE == "oogabooga":
+                API.Oogabooga_Api_Support.send_via_oogabooga(transcript)
+                message = API.Oogabooga_Api_Support.receive_via_oogabooga()
 
+            elif CHATBOT_CHOICE == "betacharacter":
+                utils.charecter.send_message(transcript)
+                message = utils.charecter.received_message()
 
+            elif CHATBOT_CHOICE == "local_llm" or CHATBOT_CHOICE == "collab_llm":
+                API.local_llm_inference.send_via_local_llm(transcript)
+                message = API.local_llm_inference.receive_via_local_llm()
 
-        if TTS_CHOICE == "ELEVENLABS":
-            utils.Elevenlabs.generate_voice(message)
+            else:
+                print("Sorry Wrong Chatbot Choice")
 
-        elif TTS_CHOICE == "LOCAL_TTS":
-            TTS.Offline_tts.test_1(message)
+            if TTS_CHOICE == "ELEVENLABS":
+                utils.Elevenlabs.generate_voice(message)
 
-        elif TTS_CHOICE == "VOICEVOX":
-            id=os.environ.get("VOICE_ID")
-            utils.voicevox_setup.generate_voice(message,id)
+            elif TTS_CHOICE == "LOCAL_TTS":
+                utils.Offline_tts.voice_generation(message)
 
+            elif TTS_CHOICE == "VOICEVOX":
+                id = os.environ.get("VOICE_ID")
+                utils.voicevox_setup.generate_voice(message, id)
 
+            else:
+                print("The Choice put in .env file not correct!")
 
+            # Set audio level using VTube Studio
+            utils.vtube_studio.set_audio_level(0.5)
 
+            # Play audio using VTube Studio
+            utils.vtube_studio.speak()
 
+            # After use, delete the recording.
+            try:
+                os.remove(audio_buffer)
+            except:
+                pass
 
-        else:
-            print("The Choice put in .env file not correct!")
+    if input_choice.lower() == "text":
+        while True:
 
+            print( colorama.Fore.GREEN + colorama.Style.BRIGHT + "YOU : ", end="", flush=True)
+            transcript = input((colorama.Fore.GREEN + colorama.Style.BRIGHT +  colorama.Fore.RESET + ">"))
 
+            if CHATBOT_CHOICE == "oogabooga":
+                API.Oogabooga_Api_Support.send_via_oogabooga(transcript)
+                message = API.Oogabooga_Api_Support.receive_via_oogabooga()
 
-        # Set audio level using VTube Studio
-        utils.vtube_studio.set_audio_level(0.5)
+            elif CHATBOT_CHOICE == "betacharacter":
+                utils.charecter.send_message(transcript)
+                message = utils.charecter.received_message()
 
+            elif CHATBOT_CHOICE == "local_llm" or CHATBOT_CHOICE == "collab_llm":
+                API.local_llm_inference.send_via_local_llm(transcript)
+                message = API.local_llm_inference.receive_via_local_llm()
 
-        # Play audio using VTube Studio
-        utils.vtube_studio.speak()
+            else:
+                print("Sorry Wrong Chatbot Choice")
 
-        # After use, delete the recording.
-        try:
-            os.remove(audio_buffer)
-        except:
-            pass
+            if TTS_CHOICE == "ELEVENLABS":
+                utils.Elevenlabs.generate_voice(message)
+
+            #LOCAL_TTS is out of support for now. Will be back soon.
+            #elif TTS_CHOICE == "LOCAL_TTS":
+                #TTS.Offline_tts.test_1(message)
+
+            elif TTS_CHOICE == "VOICEVOX":
+                id = os.environ.get("VOICE_ID")
+                utils.voicevox_setup.generate_voice(message, id)
+
+            else:
+                print("The Choice put in .env file not correct!")
+
+            # Set audio level using VTube Studio
+            utils.vtube_studio.set_audio_level(0.5)
+
+            # Play audio using VTube Studio
+            utils.vtube_studio.speak()
+
+            # After use, delete the recording.
+            try:
+                os.remove(audio_buffer)
+            except:
+                pass
+
 
 def run_program():
     # Start the VTube Studio interaction in a separate thread
