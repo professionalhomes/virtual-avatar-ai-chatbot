@@ -15,16 +15,16 @@ python -m venv venv
 call venv\Scripts\activate
 
 REM Install PyTorch, torchvision, and torchaudio from a specific index URL
-python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 2>> "%LOG_FILE%"
+REM python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 2>> "%LOG_FILE%"
 
 REM Install openai-whisper from the GitHub repository
-python -m pip install git+https://github.com/openai/whisper.git 2>> "%LOG_FILE%"
+REM python -m pip install git+https://github.com/openai/whisper.git 2>> "%LOG_FILE%"
 
 REM Install Playwright
-python -m playwright install 2>> "%LOG_FILE%"
+REM python -m playwright install 2>> "%LOG_FILE%"
 
 REM Install the remaining dependencies from requirements.txt
-python -m pip install -r requirements.txt 2>> "%LOG_FILE%"
+REM python -m pip install -r requirements.txt 2>> "%LOG_FILE%"
 
 REM Execute the Python script (replace "main.py" with the actual file name)
 python main.py 2>> "%LOG_FILE%"
