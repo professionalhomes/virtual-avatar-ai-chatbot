@@ -7,6 +7,7 @@ import program_run_test
 app = FastAPI()
 
 
+
 @app.get("/generate_voice/")
 async def generate_voice(text: str, speaker_id: int, path: str):
     text=translationtest.translation(text,"ja")
