@@ -4,6 +4,7 @@ import Voicevox_engine
 from dotenv import load_dotenv
 import psutil
 
+
 def is_program_running(program_path):
     program_exe = os.path.basename(program_path)
     for process in psutil.process_iter(['pid', 'name']):
