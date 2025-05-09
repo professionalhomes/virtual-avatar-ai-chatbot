@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 HOST = 'localhost:5000'
 URI = f'http://{HOST}/api/v1/chat'
 
