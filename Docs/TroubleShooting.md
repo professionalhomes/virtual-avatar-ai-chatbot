@@ -1,5 +1,6 @@
 ## HERE ARE THE SOLUTIONS FOR SOME COMMON ERRORS
 
+
 | NO | PROBLEM   | SOLUTION  |
 |----|-----------------|-----------------|
 | 1  | Cannot find command 'git' - do you have 'git' installed and in your PATH?  | Install [GIT](https://git-scm.com/)      |
